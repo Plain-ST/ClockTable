@@ -16,9 +16,7 @@ function showClock() {
   timeslice = (String(nowHour).split(""));
   timeslice = timeslice.concat((String(nowMin).split("")));
   timeslice = timeslice.concat((String(nowSec).split("")));
-  console.log(timeslice);
   selectNum(timeslice);
-
 }
 setInterval('showClock()', 1000);
 
@@ -42,9 +40,8 @@ setInterval('blink()', 500);
 //数字部の表示
 function selectNum(Array) {
   testnum = "";
-  for (let t=1; t<Array.length+1;t++) {
-    console.log(t);
-    switch (Array[t-1]) {
+  for (let t = 1; t < Array.length + 1; t++) {
+    switch (Array[t - 1]) {
       case "0":
         paintZero(t);
         break;
@@ -370,15 +367,15 @@ function paintNine(tnum) {
 }
 //黒で表示
 function paintOn(tnum, str) {
-  let element = document.getElementById("num"+tnum+str);
-  if(!(element.classList.contains("numPrint"))){
+  let element = document.getElementById("num" + tnum + str);
+  if (!(element.classList.contains("numPrint"))) {
     element.classList.add("numPrint");
   }
 }
 //表示削除
 function paintOff(tnum, str) {
-  let element = document.getElementById("num"+tnum+str);
-  if(element.classList.contains("numPrint")){
+  let element = document.getElementById("num" + tnum + str);
+  if (element.classList.contains("numPrint")) {
     element.classList.remove("numPrint");
   }
 }
